@@ -34,5 +34,9 @@ for example:
 
 ![image](https://user-images.githubusercontent.com/72781910/191267218-2a77ef4e-a575-4288-9ce4-69a2f412709d.png)
 
+Then you could see some prompt information in the terminal:
+
+![image](https://user-images.githubusercontent.com/72781910/191267583-f2908ce0-d295-4285-8e01-ae2ef9864346.png)
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 If you use other platforms (such as 'windows' or `MacOS`), you can refer to `CMakeLists.txt` file and use it to build a `CMake` project using `src`, `include` and `data` folder.
