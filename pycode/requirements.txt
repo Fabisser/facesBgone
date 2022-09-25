@@ -1,0 +1,17 @@
+numpy
+pyvista
+scipy
+cython
+pymeshfix
+click
+pandas
+geopandas
+tqdm
+shapely
+jupyter
+mapbox-earcut
+python-polylabel
+miniball
+ipygany
+rtree
+scikit-learn

@@ -1,12 +1,13 @@
-﻿cmake_minimum_required (VERSION 3.20)
+project(convex_hull)
+cmake_minimum_required(VERSION 3.13)
+set(CMAKE_CXX_STANDARD 14)	
 
-project ("Geometry4CFD")
+include_directories( ${CMAKE_SOURCE_DIR}/include ) # include json.hpp
 
-# find json.hpp
-include_directories( ${CMAKE_SOURCE_DIR}/include/ ) # include json.hpp
+add_subdirectory(pybind11)
 
-# find CGAL
-find_package(CGAL) # for CGAL
+pybind11_add_module(convex_hull src/main.cpp)
+find_package(CGAL) # for CGALgeocfd
 if (CGAL_FOUND)
 	include(${CGAL_USE_FILE})
 	message(STATUS "CGAL found")
@@ -15,11 +16,15 @@ else()
 	return()
 endif()
 
+include(CTest)
+enable_testing()
+
 # define data path
 add_definitions(
   -DDATA_PATH=\"${PROJECT_SOURCE_DIR}/data\"
 )
 
-# add cpp files
-add_executable (Geometry4CFD "src/main.cpp")
-
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+set(CMAKE_BUILD_TYPE Release)
+include(CPack)
