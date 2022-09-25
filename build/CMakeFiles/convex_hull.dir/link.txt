@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -O3 -DNDEBUG -flto -shared  -o convex_hull.cpython-310-x86_64-linux-gnu.so CMakeFiles/convex_hull.dir/src/main.cpp.o 

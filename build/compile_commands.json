@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/fabisser/Synthesis-Project-Fengyan/build",
+  "command": "/usr/bin/g++ -DDATA_PATH=\\\"/home/fabisser/Synthesis-Project-Fengyan/data\\\" -Dconvex_hull_EXPORTS -I/home/fabisser/Synthesis-Project-Fengyan/include -I/home/fabisser/Synthesis-Project-Fengyan/build -isystem /home/fabisser/Synthesis-Project-Fengyan/pybind11/include -isystem /home/fabisser/anaconda3/envs/synth/include/python3.10 -O3 -DNDEBUG -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -std=gnu++14 -o CMakeFiles/convex_hull.dir/src/main.cpp.o -c /home/fabisser/Synthesis-Project-Fengyan/src/main.cpp",
+  "file": "/home/fabisser/Synthesis-Project-Fengyan/src/main.cpp"
+}
+]
