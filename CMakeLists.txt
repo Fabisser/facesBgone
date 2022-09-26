@@ -3,10 +3,12 @@ cmake_minimum_required(VERSION 3.13)
 set(CMAKE_CXX_STANDARD 14)	
 
 include_directories( ${CMAKE_SOURCE_DIR}/include ) # include json.hpp
+include_directories( ${CMAKE_SOURCE_DIR}/src ) # include json.hpp
 
 add_subdirectory(pybind11)
 
 pybind11_add_module(convex_hull src/main.cpp)
+
 find_package(CGAL) # for CGALgeocfd
 if (CGAL_FOUND)
 	include(${CGAL_USE_FILE})
@@ -16,6 +18,7 @@ else()
 	return()
 endif()
 
+target_link_libraries(convex_hull PRIVATE CGAL::CGAL)
 include(CTest)
 enable_testing()
 

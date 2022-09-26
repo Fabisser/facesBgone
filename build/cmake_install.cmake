@@ -1,4 +1,4 @@
-# Install script for directory: /home/fabisser/Synthesis-Project-Fengyan
+# Install script for directory: /Users/fabzv/Desktop/Delft/Synthesis-Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,11 +27,6 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
-endif()
-
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
@@ -44,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/fabisser/Synthesis-Project-Fengyan/build/pybind11/cmake_install.cmake")
+  include("/Users/fabzv/Desktop/Delft/Synthesis-Project/build/pybind11/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/fabisser/Synthesis-Project-Fengyan/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/fabzv/Desktop/Delft/Synthesis-Project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

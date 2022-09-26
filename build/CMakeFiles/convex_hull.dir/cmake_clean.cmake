@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/convex_hull.dir/src/main.cpp.o"
   "CMakeFiles/convex_hull.dir/src/main.cpp.o.d"
-  "convex_hull.cpython-310-x86_64-linux-gnu.so"
+  "convex_hull.cpython-310-darwin.so"
   "convex_hull.pdb"
 )
 
