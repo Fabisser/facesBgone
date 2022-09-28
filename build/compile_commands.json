@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/fabzv/Desktop/Delft/Synthesis-Project/build",
+  "command": "/usr/bin/clang++ -DCGAL_USE_GMPXX=1 -DDATA_PATH=\\\"/Users/fabzv/Desktop/Delft/Synthesis-Project/data\\\" -Dconvex_hull_EXPORTS -I/Users/fabzv/Desktop/Delft/Synthesis-Project/include -I/Users/fabzv/Desktop/Delft/Synthesis-Project/src -I/Users/fabzv/Desktop/Delft/Synthesis-Project/build -isystem /usr/local/include -isystem /Users/fabzv/Desktop/Delft/Synthesis-Project/pybind11/include -isystem /Users/fabzv/miniconda3/envs/synth/include/python3.10 -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -fPIC -fvisibility=hidden -std=gnu++14 -o CMakeFiles/convex_hull.dir/src/main.cpp.o -c /Users/fabzv/Desktop/Delft/Synthesis-Project/src/main.cpp",
+  "file": "/Users/fabzv/Desktop/Delft/Synthesis-Project/src/main.cpp"
+}
+]
