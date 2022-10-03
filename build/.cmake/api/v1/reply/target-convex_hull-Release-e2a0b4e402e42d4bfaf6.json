@@ -147,7 +147,7 @@
 				{
 					"backtrace" : 3,
 					"isSystem" : true,
-					"path" : "/Users/fabzv/miniconda3/envs/synth/include/python3.10"
+					"path" : "/Users/fabzv/miniconda3/envs/test/include/python3.10"
 				}
 			],
 			"language" : "CXX",

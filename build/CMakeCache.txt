@@ -52,14 +52,15 @@ CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
-//No help, variable specified on the command line.
-CMAKE_BUILD_TYPE:STRING=Debug
+//Choose the type of build, options are: None Debug Release RelWithDebInfo
+// MinSizeRel ...
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
-//No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/clang++
+//CXX compiler
+CMAKE_CXX_COMPILER:STRING=/usr/bin/clang++
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
@@ -76,8 +77,8 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//No help, variable specified on the command line.
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/clang
+//C compiler
+CMAKE_C_COMPILER:STRING=/usr/bin/clang
 
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
@@ -112,8 +113,8 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//No help, variable specified on the command line.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
+//Enable/Disable output of compile commands during generation.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
 //User executables (bin)
 CMAKE_INSTALL_BINDIR:PATH=bin
@@ -367,7 +368,7 @@ GMPXX_INCLUDE_DIR:PATH=/usr/local/include
 //Path to the GMPXX library
 GMPXX_LIBRARIES:FILEPATH=/usr/local/lib/libgmpxx.dylib
 
-//Path to a file.
+//The directory containing the GMP header files
 GMP_INCLUDE_DIR:PATH=/usr/local/include
 
 //Path to the Debug GMP library
@@ -404,10 +405,10 @@ PYBIND11_PYTHON_VERSION:STRING=
 PYBIND11_TEST:BOOL=OFF
 
 //Path to a program.
-PYTHON_EXECUTABLE:FILEPATH=/Users/fabzv/miniconda3/envs/synth/bin/python
+PYTHON_EXECUTABLE:FILEPATH=/Users/fabzv/miniconda3/python.app/Contents/MacOS/python
 
 //Path to a library.
-PYTHON_LIBRARY:FILEPATH=/Users/fabzv/miniconda3/envs/synth/lib/libpython3.10.dylib
+PYTHON_LIBRARY:FILEPATH=/Users/fabzv/miniconda3/lib/libpython3.9.dylib
 
 //The directory containing a CMake configuration file for boost_headers.
 boost_headers_DIR:PATH=/usr/local/lib/cmake/boost_headers-1.78.0
@@ -665,9 +666,9 @@ FIND_PACKAGE_MESSAGE_DETAILS_GMP:INTERNAL=[/usr/local/lib/libgmp.dylib][/usr/loc
 //Details about finding MPFR
 FIND_PACKAGE_MESSAGE_DETAILS_MPFR:INTERNAL=[/usr/local/lib/libmpfr.dylib][/usr/local/include][v()]
 //Details about finding PYTHON
-FIND_PACKAGE_MESSAGE_DETAILS_PYTHON:INTERNAL=/Users/fabzv/miniconda3/envs/synth/bin/python3.10.4
+FIND_PACKAGE_MESSAGE_DETAILS_PYTHON:INTERNAL=/Users/fabzv/miniconda3/python.app/Contents/MacOS/python3.9.12
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/Users/fabzv/miniconda3/envs/synth/bin/python][v3.10.4(3.6)]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/Users/fabzv/miniconda3/python.app/Contents/MacOS/python][v3.9.12(3.6)]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Test HAS_FLTO
@@ -677,16 +678,16 @@ HAS_FLTO_THIN:INTERNAL=1
 PYBIND11_INCLUDE_DIR:INTERNAL=/Users/fabzv/Desktop/Delft/Synthesis-Project/pybind11/include
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
-PYTHON_INCLUDE_DIRS:INTERNAL=/Users/fabzv/miniconda3/envs/synth/include/python3.10
+PYTHON_INCLUDE_DIRS:INTERNAL=/Users/fabzv/miniconda3/python.app/Contents/include/python3.9
 PYTHON_IS_DEBUG:INTERNAL=0
-PYTHON_LIBRARIES:INTERNAL=/Users/fabzv/miniconda3/envs/synth/lib/libpython3.10.dylib
+PYTHON_LIBRARIES:INTERNAL=/Users/fabzv/miniconda3/lib/libpython3.9.dylib
 //ADVANCED property for variable: PYTHON_LIBRARY
 PYTHON_LIBRARY-ADVANCED:INTERNAL=1
-PYTHON_MODULE_EXTENSION:INTERNAL=.cpython-310-darwin.so
+PYTHON_MODULE_EXTENSION:INTERNAL=.cpython-39-darwin.so
 PYTHON_MODULE_PREFIX:INTERNAL=
-PYTHON_VERSION:INTERNAL=3.10.4
+PYTHON_VERSION:INTERNAL=3.9.12
 PYTHON_VERSION_MAJOR:INTERNAL=3
-PYTHON_VERSION_MINOR:INTERNAL=10
+PYTHON_VERSION_MINOR:INTERNAL=9
 Python_ADDITIONAL_VERSIONS:INTERNAL=3.11;3.10;3.9;3.8;3.7;3.6
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
@@ -698,5 +699,5 @@ pybind11_FOUND:INTERNAL=TRUE
 //Directory where pybind11 headers are located
 pybind11_INCLUDE_DIR:INTERNAL=/Users/fabzv/Desktop/Delft/Synthesis-Project/pybind11/include
 //Directories where pybind11 and possibly Python headers are located
-pybind11_INCLUDE_DIRS:INTERNAL=/Users/fabzv/Desktop/Delft/Synthesis-Project/pybind11/include;/Users/fabzv/miniconda3/envs/synth/include/python3.10
+pybind11_INCLUDE_DIRS:INTERNAL=/Users/fabzv/Desktop/Delft/Synthesis-Project/pybind11/include;/Users/fabzv/miniconda3/python.app/Contents/include/python3.9
 

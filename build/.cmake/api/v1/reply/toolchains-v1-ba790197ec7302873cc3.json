@@ -24,7 +24,7 @@
 					],
 					"linkLibraries" : []
 				},
-				"path" : "/usr/bin/clang",
+				"path" : "/Library/Developer/CommandLineTools/usr/bin/cc",
 				"version" : "13.0.0.13000029"
 			},
 			"language" : "C",
@@ -60,7 +60,7 @@
 						"c++"
 					]
 				},
-				"path" : "/usr/bin/clang++",
+				"path" : "/Library/Developer/CommandLineTools/usr/bin/c++",
 				"version" : "13.0.0.13000029"
 			},
 			"language" : "CXX",

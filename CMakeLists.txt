@@ -18,7 +18,7 @@ else()
 	return()
 endif()
 
-target_link_libraries(convex_hull PRIVATE CGAL::CGAL)
+target_link_libraries(convex_hull CGAL::CGAL)
 include(CTest)
 enable_testing()
 

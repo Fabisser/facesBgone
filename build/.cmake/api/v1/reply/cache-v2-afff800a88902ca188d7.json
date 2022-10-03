@@ -187,7 +187,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ar"
+			"value" : "/Library/Developer/CommandLineTools/usr/bin/ar"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -195,11 +195,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ..."
 				}
 			],
 			"type" : "STRING",
-			"value" : "Debug"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -311,11 +311,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/clang++"
+			"value" : "/Library/Developer/CommandLineTools/usr/bin/c++"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -407,11 +407,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "C compiler"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/clang"
+			"value" : "/Library/Developer/CommandLineTools/usr/bin/cc"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -623,11 +623,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Enable/Disable output of compile commands during generation."
 				}
 			],
 			"type" : "BOOL",
-			"value" : "TRUE"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
@@ -1023,7 +1023,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ld"
+			"value" : "/Library/Developer/CommandLineTools/usr/bin/ld"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -1135,7 +1135,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/nm"
+			"value" : "/Library/Developer/CommandLineTools/usr/bin/nm"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -1179,7 +1179,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/objdump"
+			"value" : "/Library/Developer/CommandLineTools/usr/bin/objdump"
 		},
 		{
 			"name" : "CMAKE_OSX_ARCHITECTURES",
@@ -1339,7 +1339,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ranlib"
+			"value" : "/Library/Developer/CommandLineTools/usr/bin/ranlib"
 		},
 		{
 			"name" : "CMAKE_READELF",
@@ -1575,7 +1575,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/strip"
+			"value" : "/Library/Developer/CommandLineTools/usr/bin/strip"
 		},
 		{
 			"name" : "CMAKE_UNAME",
@@ -1971,7 +1971,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/fabzv/miniconda3/envs/synth/bin/python3.10.4"
+			"value" : "/Users/fabzv/miniconda3/envs/test/bin/python3.10.4"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp",
@@ -1983,7 +1983,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/Users/fabzv/miniconda3/envs/synth/bin/python][v3.10.4(3.6)]"
+			"value" : "[/Users/fabzv/miniconda3/envs/test/bin/python][v3.10.4(3.6)]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
@@ -2027,7 +2027,7 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "Path to a file."
+					"value" : "The directory containing the GMP header files"
 				}
 			],
 			"type" : "PATH",
@@ -2215,7 +2215,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Users/fabzv/miniconda3/envs/synth/bin/python"
+			"value" : "/Users/fabzv/miniconda3/envs/test/bin/python"
 		},
 		{
 			"name" : "PYTHON_INCLUDE_DIRS",
@@ -2227,7 +2227,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/fabzv/miniconda3/envs/synth/include/python3.10"
+			"value" : "/Users/fabzv/miniconda3/envs/test/include/python3.10"
 		},
 		{
 			"name" : "PYTHON_IS_DEBUG",
@@ -2251,7 +2251,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/fabzv/miniconda3/envs/synth/lib/libpython3.10.dylib"
+			"value" : "/Users/fabzv/miniconda3/envs/test/lib/libpython3.10.dylib"
 		},
 		{
 			"name" : "PYTHON_LIBRARY",
@@ -2267,7 +2267,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Users/fabzv/miniconda3/envs/synth/lib/libpython3.10.dylib"
+			"value" : "/Users/fabzv/miniconda3/envs/test/lib/libpython3.10.dylib"
 		},
 		{
 			"name" : "PYTHON_MODULE_EXTENSION",
@@ -2463,7 +2463,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/fabzv/Desktop/Delft/Synthesis-Project/pybind11/include;/Users/fabzv/miniconda3/envs/synth/include/python3.10"
+			"value" : "/Users/fabzv/Desktop/Delft/Synthesis-Project/pybind11/include;/Users/fabzv/miniconda3/envs/test/include/python3.10"
 		},
 		{
 			"name" : "pybind11_IS_TOP_LEVEL",
