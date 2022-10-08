@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/fabzv/Desktop/Delft/Synthesis-Project/build",
+  "command": "/usr/bin/clang++ -DCGAL_USE_GMPXX=1 -DDATA_PATH=\\\"/Users/fabzv/Desktop/Delft/Synthesis-Project/data\\\" -I/Users/fabzv/Desktop/Delft/Synthesis-Project/include -I/Users/fabzv/Desktop/Delft/Synthesis-Project/build -isystem /usr/local/include -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu++14 -o CMakeFiles/Geometry4CFD.dir/src/main.cpp.o -c /Users/fabzv/Desktop/Delft/Synthesis-Project/src/main.cpp",
+  "file": "/Users/fabzv/Desktop/Delft/Synthesis-Project/src/main.cpp"
+}
+]

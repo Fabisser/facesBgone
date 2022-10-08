@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /Users/fabzv/Desktop/Delft/Synthesis-Project/build/CMakeFiles/convex_hull.dir
 /Users/fabzv/Desktop/Delft/Synthesis-Project/build/CMakeFiles/package.dir
 /Users/fabzv/Desktop/Delft/Synthesis-Project/build/CMakeFiles/package_source.dir
@@ -9,3 +10,8 @@
 /Users/fabzv/Desktop/Delft/Synthesis-Project/build/pybind11/CMakeFiles/test.dir
 /Users/fabzv/Desktop/Delft/Synthesis-Project/build/pybind11/CMakeFiles/edit_cache.dir
 /Users/fabzv/Desktop/Delft/Synthesis-Project/build/pybind11/CMakeFiles/rebuild_cache.dir
+=======
+/Users/fabzv/Desktop/Delft/Synthesis-Project/build/CMakeFiles/Geometry4CFD.dir
+/Users/fabzv/Desktop/Delft/Synthesis-Project/build/CMakeFiles/edit_cache.dir
+/Users/fabzv/Desktop/Delft/Synthesis-Project/build/CMakeFiles/rebuild_cache.dir
+>>>>>>> Stashed changes
