@@ -13,7 +13,11 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     set(CMAKE_INSTALL_CONFIG_NAME "Release")
+=======
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+>>>>>>> Stashed changes
 =======
     set(CMAKE_INSTALL_CONFIG_NAME "Debug")
 >>>>>>> Stashed changes
@@ -42,12 +46,15 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/Users/fabzv/Desktop/Delft/Synthesis-Project/build/pybind11/cmake_install.cmake")
 
 endif()
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 if(CMAKE_INSTALL_COMPONENT)

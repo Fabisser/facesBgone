@@ -6,7 +6,11 @@ import pyvista as pv
 import math
 import os
 from helpers.geometry import surface_normal, project_2d, axes_of_normal
+<<<<<<< Updated upstream
 from shapely.geometry import MultiPolygon, Polygon, LineString
+=======
+from shapely.geometry import MultiPolygon, Polygon
+>>>>>>> Stashed changes
 import scipy
 from sklearn.cluster import AgglomerativeClustering
 import rtree.index
@@ -202,6 +206,7 @@ def symmetric_difference(meshes):
         normal = meshes[0].extract_cells(all_idxs[0][0]).extract_surface().face_normals[0]
         
         if inter.area > 0.01:
+<<<<<<< Updated upstream
             # if inter.type == "MultiPolygon":            
             #     #  project back to 3D
             #     for geom in inter.geoms:
@@ -252,11 +257,45 @@ def symmetric_difference(meshes):
                         common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                          
                         common_mesh_symdif["area"] = [symdif.area]
                         areas_symdif.append(common_mesh_symdif)
+=======
+            if inter.type == "MultiPolygon":            
+                #  project back to 3D
+                for geom in inter.geoms:
+                    # print("Is Geometry Valid?: ", geom.is_valid)                    
+                    pts = to_3d(geom, normal, origin)                    
+                    common_mesh_inter = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts)))) 
+                    common_mesh_inter["area"] = [geom.area]
+                    areas_inter.append(common_mesh_inter)
+                    
+            if inter.type == "Polygon":
+                    pts = to_3d(inter, normal, origin)
+                    common_mesh_inter = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))
+                    common_mesh_inter["area"] = [inter.area]
+                    areas_inter.append(common_mesh_inter)
+        
+            if symdif.area > 0.01:
+                if symdif.type == "MultiPolygon":
+                    for geom in symdif.geoms:                
+                        pts = to_3d(geom, normal, origin)                    
+                        common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts)))) 
+                        common_mesh_symdif["area"] = [symdif.area]
+                        areas_symdif.append(common_mesh_symdif)
+                        
+                if symdif.type == "Polygon":
+                    pts = to_3d(inter, normal, origin)
+                    common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))
+                    common_mesh_symdif["area"] = [symdif.area]
+                    areas_symdif.append(common_mesh_symdif)
+>>>>>>> Stashed changes
 
 
         return all_idxs, areas_inter, areas_symdif
     else:
+<<<<<<< Updated upstream
         return 0, 0, 0
+=======
+        return 0,0,0
+>>>>>>> Stashed changes
 
 
 def intersect_pairs(mesh, neighbours):
@@ -310,7 +349,11 @@ def abs_distance(x, y):
 float_formatter = "{:.3f}".format
 np.set_printoptions(formatter={'float_kind':float_formatter})
 
+<<<<<<< Updated upstream
 filename = "/Users/fabzv/Desktop/Delft/Synthesis-Project/3d-building-metrics/row.json"
+=======
+filename = "fourbuildings.json"
+>>>>>>> Stashed changes
 
 with open(filename) as file:
     cm = json.load(file)
@@ -390,9 +433,15 @@ for building_part in cm['CityObjects']:
                 merged_mesh = main_mesh + meshes[nearby_building]
                 # print("nearby building")
                 # print(meshes_id[nearby_building])
+<<<<<<< Updated upstream
                 # inter_mesh = intersection[0]
                 # for i in range(1, len(intersection)):
                 #     inter_mesh = inter_mesh + intersection[i]
+=======
+                inter_mesh = intersection[0]
+                for i in range(1, len(intersection)):
+                    inter_mesh = inter_mesh + intersection[i]
+>>>>>>> Stashed changes
                     
                 symdif_mesh = symdif[0]
                 for i in range(1, len(symdif)):
@@ -427,6 +476,7 @@ for building_part in cm['CityObjects']:
             
                 
 #             # plot both buildings
+<<<<<<< Updated upstream
                 # plotter = pv.Plotter()
                 # ## add meshes
                 # actor =  plotter.add_mesh(main_mesh, opacity = 0.3, color = "red", show_edges = True)
@@ -439,6 +489,20 @@ for building_part in cm['CityObjects']:
                 # #actor4 = plotter.add_points(inter_mesh.points, render_points_as_spheres=True, point_size=10.0)
                 # # actor5 = plotter.add_points(new_merged_mesh.points, render_points_as_spheres=True, point_size=10.0, color='yellow')            
                 # plotter.show()
+=======
+                plotter = pv.Plotter()
+                ## add meshes
+                actor =  plotter.add_mesh(main_mesh, opacity = 0.3, color = "red", show_edges = True)
+                # actor10 =  plotter.add_mesh(reconstructed_mesh, opacity = 0.3, color = "yellow", show_edges = True)
+                
+                actor1 =  plotter.add_mesh(symdif_mesh, color = "green", show_edges = True)
+                # actor2 =  plotter.add_mesh(inter_mesh, color = "blue", show_edges = True)
+                ## add points of meshes
+                # actor3 = plotter.add_points(symdif_mesh.points, render_points_as_spheres=True, point_size=10.0, color='pink')
+                #actor4 = plotter.add_points(inter_mesh.points, render_points_as_spheres=True, point_size=10.0)
+                # actor5 = plotter.add_points(new_merged_mesh.points, render_points_as_spheres=True, point_size=10.0, color='yellow')            
+                plotter.show()
+>>>>>>> Stashed changes
 
                 # finalbuilding = finalbuilding+new_merged_mesh
                 # finalbuilding = finalbuilding+symdif_mesh
@@ -454,7 +518,11 @@ actor =  plotter.add_mesh(finalmesh, opacity = 0.3, color = "red", show_edges = 
             
 plotter.show()   
 
+<<<<<<< Updated upstream
 finalmesh.save("rowoutput.ply")
+=======
+finalmesh.save("output.ply")
+>>>>>>> Stashed changes
 
 
 #             # SECTION: turn the new merged mesh into our own data model
