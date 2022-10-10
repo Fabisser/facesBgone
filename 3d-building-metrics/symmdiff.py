@@ -6,7 +6,7 @@ import pyvista as pv
 import math
 import os
 from helpers.geometry import surface_normal, project_2d, axes_of_normal
-from shapely.geometry import MultiPolygon, Polygon
+from shapely.geometry import MultiPolygon, Polygon, LineString
 import scipy
 from sklearn.cluster import AgglomerativeClustering
 import rtree.index
@@ -202,39 +202,61 @@ def symmetric_difference(meshes):
         normal = meshes[0].extract_cells(all_idxs[0][0]).extract_surface().face_normals[0]
         
         if inter.area > 0.01:
-            if inter.type == "MultiPolygon":            
-                #  project back to 3D
-                for geom in inter.geoms:
-                    # print("Is Geometry Valid?: ", geom.is_valid)                    
-                    pts = to_3d(geom, normal, origin)                    
-                    common_mesh_inter = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts)))) 
-                    common_mesh_inter["area"] = [geom.area]
-                    areas_inter.append(common_mesh_inter)
+            # if inter.type == "MultiPolygon":            
+            #     #  project back to 3D
+            #     for geom in inter.geoms:
+            #         # print("Is Geometry Valid?: ", geom.is_valid)                    
+            #         pts = to_3d(geom, normal, origin)                    
+            #         common_mesh_inter = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts)))) 
+            #         common_mesh_inter["area"] = [geom.area]
+            #         areas_inter.append(common_mesh_inter)
                     
-            if inter.type == "Polygon":
-                    pts = to_3d(inter, normal, origin)
-                    common_mesh_inter = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))
-                    common_mesh_inter["area"] = [inter.area]
-                    areas_inter.append(common_mesh_inter)
+            # if inter.type == "Polygon":
+            #         pts = to_3d(inter, normal, origin)
+            #         common_mesh_inter = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))
+            #         common_mesh_inter["area"] = [inter.area]
+            #         areas_inter.append(common_mesh_inter)
         
             if symdif.area > 0.01:
                 if symdif.type == "MultiPolygon":
-                    for geom in symdif.geoms:                
-                        pts = to_3d(geom, normal, origin)                    
-                        common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts)))) 
-                        common_mesh_symdif["area"] = [symdif.area]
-                        areas_symdif.append(common_mesh_symdif)
+                    for geom in symdif.geoms:
+                        if len(list(geom.interiors)) > 0:
+                            for interior in geom.interiors:
+                                cut = LineString([(geom.bounds[0], interior.coords[0][1]), (geom.bounds[2], interior.coords[0][1])])
+                                cut = cut.buffer(0.001)
+                                geomcut = geom.difference(cut)
+                                for piece in geomcut.geoms:
+                                    pts = to_3d(piece, normal, origin)
+                                    common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                          
+                                    common_mesh_symdif["area"] = [symdif.area]
+                                    areas_symdif.append(common_mesh_symdif) 
+                        else:
+                            pts = to_3d(geom, normal, origin)  
+                            common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                          
+                            common_mesh_symdif["area"] = [symdif.area]
+                            areas_symdif.append(common_mesh_symdif)
                         
                 if symdif.type == "Polygon":
-                    pts = to_3d(inter, normal, origin)
-                    common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))
-                    common_mesh_symdif["area"] = [symdif.area]
-                    areas_symdif.append(common_mesh_symdif)
+                    if len(list(symdif.interiors)) > 0:
+                            for interior in symdif.interiors:
+                                cut = LineString([(symdif.bounds[0], interior.coords[0][1]), (symdif.bounds[2], interior.coords[0][1])])
+                                cut = cut.buffer(0.001)
+                                geomcut = symdif.difference(cut)
+                                for piece in geomcut.geoms:
+                                    pts = to_3d(piece, normal, origin)
+                                    common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                          
+                                    common_mesh_symdif["area"] = [symdif.area]
+                                    areas_symdif.append(common_mesh_symdif) 
+                    else:
+                        pts = to_3d(symdif, normal, origin)  
+                        common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                          
+                        common_mesh_symdif["area"] = [symdif.area]
+                        areas_symdif.append(common_mesh_symdif)
 
 
         return all_idxs, areas_inter, areas_symdif
     else:
-        return 0,0,0
+        return 0, 0, 0
 
 
 def intersect_pairs(mesh, neighbours):
@@ -288,7 +310,7 @@ def abs_distance(x, y):
 float_formatter = "{:.3f}".format
 np.set_printoptions(formatter={'float_kind':float_formatter})
 
-filename = "fourbuildings.json"
+filename = "/Users/fabzv/Desktop/Delft/Synthesis-Project/3d-building-metrics/row.json"
 
 with open(filename) as file:
     cm = json.load(file)
@@ -368,9 +390,9 @@ for building_part in cm['CityObjects']:
                 merged_mesh = main_mesh + meshes[nearby_building]
                 # print("nearby building")
                 # print(meshes_id[nearby_building])
-                inter_mesh = intersection[0]
-                for i in range(1, len(intersection)):
-                    inter_mesh = inter_mesh + intersection[i]
+                # inter_mesh = intersection[0]
+                # for i in range(1, len(intersection)):
+                #     inter_mesh = inter_mesh + intersection[i]
                     
                 symdif_mesh = symdif[0]
                 for i in range(1, len(symdif)):
@@ -405,18 +427,18 @@ for building_part in cm['CityObjects']:
             
                 
 #             # plot both buildings
-                plotter = pv.Plotter()
-                ## add meshes
-                actor =  plotter.add_mesh(main_mesh, opacity = 0.3, color = "red", show_edges = True)
-                # actor10 =  plotter.add_mesh(reconstructed_mesh, opacity = 0.3, color = "yellow", show_edges = True)
+                # plotter = pv.Plotter()
+                # ## add meshes
+                # actor =  plotter.add_mesh(main_mesh, opacity = 0.3, color = "red", show_edges = True)
+                # # actor10 =  plotter.add_mesh(reconstructed_mesh, opacity = 0.3, color = "yellow", show_edges = True)
                 
-                actor1 =  plotter.add_mesh(symdif_mesh, color = "green", show_edges = True)
-                # actor2 =  plotter.add_mesh(inter_mesh, color = "blue", show_edges = True)
-                ## add points of meshes
-                # actor3 = plotter.add_points(symdif_mesh.points, render_points_as_spheres=True, point_size=10.0, color='pink')
-                #actor4 = plotter.add_points(inter_mesh.points, render_points_as_spheres=True, point_size=10.0)
-                # actor5 = plotter.add_points(new_merged_mesh.points, render_points_as_spheres=True, point_size=10.0, color='yellow')            
-                plotter.show()
+                # actor1 =  plotter.add_mesh(symdif_mesh, color = "green", show_edges = True)
+                # # actor2 =  plotter.add_mesh(inter_mesh, color = "blue", show_edges = True)
+                # ## add points of meshes
+                # # actor3 = plotter.add_points(symdif_mesh.points, render_points_as_spheres=True, point_size=10.0, color='pink')
+                # #actor4 = plotter.add_points(inter_mesh.points, render_points_as_spheres=True, point_size=10.0)
+                # # actor5 = plotter.add_points(new_merged_mesh.points, render_points_as_spheres=True, point_size=10.0, color='yellow')            
+                # plotter.show()
 
                 # finalbuilding = finalbuilding+new_merged_mesh
                 # finalbuilding = finalbuilding+symdif_mesh
@@ -432,7 +454,7 @@ actor =  plotter.add_mesh(finalmesh, opacity = 0.3, color = "red", show_edges = 
             
 plotter.show()   
 
-finalmesh.save("output.ply")
+finalmesh.save("rowoutput.ply")
 
 
 #             # SECTION: turn the new merged mesh into our own data model
