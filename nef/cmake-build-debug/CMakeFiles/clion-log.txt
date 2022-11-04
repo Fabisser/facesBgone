@@ -1,5 +1,0 @@
-C:\WINDOWS\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Users/Panagiotior/Desktop/Test_Jupyter/Synthesis-Project/3d-building-metrics/project_face_removal/nef/cmake-build-debug && /usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE = /mnt/c/Users/Panagiotior/Desktop/Test_Jupyter/Synthesis-Project/PolyFit-CGAL/thirdparty/CGAL-5.5.1 -G 'CodeBlocks - Unix Makefiles' /mnt/c/Users/Panagiotior/Desktop/Test_Jupyter/Synthesis-Project/3d-building-metrics/project_face_removal/nef"
-CMake Error: Parse error in command line argument: CMAKE
- Should be: VAR:type=value
-
-CMake Error: Run 'cmake --help' for all supported options.

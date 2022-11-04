@@ -1,4 +1,4 @@
-# Install script for directory: /Users/fabzv/Downloads/project_face_removal/nef
+# Install script for directory: /Users/fabzv/Desktop/Delft/Synthesis-Project/nef
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/fabzv/Downloads/project_face_removal/nef/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/fabzv/Desktop/Delft/Synthesis-Project/nef/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

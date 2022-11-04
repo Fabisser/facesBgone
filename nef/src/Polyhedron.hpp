@@ -15,12 +15,14 @@
 #include <boost/foreach.hpp> // for filling holes
 #include <CGAL/OFF_to_nef_3.h> // for erosion - constructing bbox
 
+
 // for remeshing
 #include <CGAL/Surface_mesh.h> // for surface_mesh
 #include <CGAL/boost/graph/copy_face_graph.h> // for converting to surface mesh
 #include <CGAL/Polygon_mesh_processing/remesh.h>
 #include <CGAL/Polygon_mesh_processing/border.h>
-//#include <CGAL/Polygon_mesh_processing/IO/polygon_mesh_io.h>
+#include <CGAL/Polygon_mesh_processing/IO/polygon_mesh_io.h>
+#include <CGAL/boost/graph/convert_nef_polyhedron_to_polygon_mesh.h>
 #include <boost/iterator/function_output_iterator.hpp>
 
 

@@ -1,0 +1,12 @@
+numpy
+vtk
+pyvista
+mapbox_earcut
+scipy
+pymeshfix
+pandas
+tqdm
+shapely
+rtree
+scikit-learn
+networkx

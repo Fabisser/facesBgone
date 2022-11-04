@@ -38,25 +38,21 @@ int main(int argc, char *argv[]) {
     //bool enable_multi_threading = p.exist("multi");
     //bool all_adjacency_tag = p.exist("all");
 
-
-    std::string srcFile = argv[1];
-    std::string adjacencyFile = argv[2];
+    std::string srcFile = argv[2] +std::string("/") + argv[1];
+    std::string adjacencyFile = argv[2] + std::string("/adjacency.txt");
     double minkowski_param;
 
     double lod = 2.2;
 
-    std::string path = "../data/"; //raw string
+    std::string path = argv[2]; //raw string
 
     bool all_adjacency_tag = true;
     bool enable_multi_threading = false;
 
 
-    if (argv[3] == "") {
-        minkowski_param = 0.01;
-    } else {
-        std::string mink_str = argv[3];
-        minkowski_param = std::stod(mink_str);
-    }
+    std::string mink_str = argv[3];
+    minkowski_param = std::stod(mink_str);
+
 
 
     /* ----------------------------------------------------------------------------------------------------------------------*/
@@ -75,18 +71,18 @@ int main(int argc, char *argv[]) {
 
     // output files
     bool OUTPUT_JSON = false;
-    bool OUTPUT_OFF = true;
+    bool OUTPUT_STL = true;
     std::string output_format;
-    if (OUTPUT_JSON && OUTPUT_OFF == false) {
+    if (OUTPUT_JSON && OUTPUT_STL == false) {
         output_format = ".json";
-    } else if (OUTPUT_OFF && OUTPUT_JSON == false) {
-        output_format = ".off";
-    } else if (OUTPUT_JSON == false && OUTPUT_OFF == false) {
+    } else if (OUTPUT_STL && OUTPUT_JSON == false) {
+        output_format = ".stl";
+    } else if (OUTPUT_JSON == false && OUTPUT_STL == false) {
         OUTPUT_JSON = true;
-        OUTPUT_OFF = true;
-        output_format = ".json and .off"; // if no format specified, output two formats
+        OUTPUT_STL = true;
+        output_format = ".json and .stl"; // if no format specified, output two formats
     } else {
-        output_format = ".json and .off";
+        output_format = ".json and .stl";
     }
     /* ----------------------------------------------------------------------------------------------------------------------*/
 
@@ -95,34 +91,34 @@ int main(int argc, char *argv[]) {
 
 
 
-    /* print the parameters -------------------------------------------------------------------------------------------------*/
-    std::string emt_string = enable_multi_threading ? "true" : "false";
-    std::cout << '\n';
-    std::cout << "====== this is: " << argv[0] << " ======" << '\n';
-    std::cout << "=> source file\t\t\t " << srcFile << '\n';
-    std::cout << "=> adjacency\t\t\t " << adjacencyFile << '\n';
-    std::cout << "=> all adjacency tag\t\t " << (all_adjacency_tag ? "true" : "false") << '\n';
-    std::cout << "=> lod level\t\t\t " << lod << '\n';
-    std::cout << "=> minkowksi parameter\t\t " << minkowski_param << '\n';
-    std::cout << "=> output file folder\t\t " << path << '\n';
-    std::cout << "=> output file format\t\t " << output_format << '\n';
-    std::cout << '\n';
-    /* ----------------------------------------------------------------------------------------------------------------------*/
+    // /* print the parameters -------------------------------------------------------------------------------------------------*/
+    // std::string emt_string = enable_multi_threading ? "true" : "false";
+    // std::cout << '\n';
+    // std::cout << "====== this is: " << argv[0] << " ======" << '\n';
+    // std::cout << "=> source file\t\t\t " << srcFile << '\n';
+    // std::cout << "=> adjacency\t\t\t " << adjacencyFile << '\n';
+    // std::cout << "=> all adjacency tag\t\t " << (all_adjacency_tag ? "true" : "false") << '\n';
+    // std::cout << "=> lod level\t\t\t " << lod << '\n';
+    // std::cout << "=> minkowksi parameter\t\t " << minkowski_param << '\n';
+    // std::cout << "=> output file folder\t\t " << path << '\n';
+    // std::cout << "=> output file format\t\t " << output_format << '\n';
+    // std::cout << '\n';
+    // /* ----------------------------------------------------------------------------------------------------------------------*/
 
 
 
 
 
 
-    /* ready to go? ---------------------------------------------------------------------------------------------------------*/
-    std::cout << "Proceed ? [y/n]" << '\n';
-    char proceed;
-    std::cin >> proceed;
-    if (proceed == 'n' || proceed == 'N') {
-        std::cout << "Proceeding aborted" << '\n';
-        return 0;
-    }
-    /* ----------------------------------------------------------------------------------------------------------------------*/
+    // /* ready to go? ---------------------------------------------------------------------------------------------------------*/
+    // std::cout << "Proceed ? [y/n]" << '\n';
+    // char proceed;
+    // std::cin >> proceed;
+    // if (proceed == 'n' || proceed == 'N') {
+    //     std::cout << "Proceeding aborted" << '\n';
+    //     return 0;
+    // }
+    // /* ----------------------------------------------------------------------------------------------------------------------*/
 
 
 
@@ -233,27 +229,27 @@ int main(int argc, char *argv[]) {
 
         // write file
         // json
-        if (OUTPUT_JSON) {
+        // if (OUTPUT_JSON) {
 
-            // get lod string
-            std::string lod_string;
-            if (std::abs(lod - 1.2) < epsilon)lod_string = "1.2";
-            if (std::abs(lod - 1.3) < epsilon)lod_string = "1.3";
-            if (std::abs(lod - 2.2) < epsilon)lod_string = "2.2";
+        //     // get lod string
+        //     std::string lod_string;
+        //     if (std::abs(lod - 1.2) < epsilon)lod_string = "1.2";
+        //     if (std::abs(lod - 1.3) < epsilon)lod_string = "1.3";
+        //     if (std::abs(lod - 2.2) < epsilon)lod_string = "2.2";
 
-            // get minkowski param string
-            std::string minkowski_string = std::to_string(minkowski_param);
+        //     // get minkowski param string
+        //     std::string minkowski_string = std::to_string(minkowski_param);
 
-            // output
-            std::string writeFilename = "interior_lod=" + lod_string + "_" + "m=" + minkowski_string + ".json";
-            const Shell_explorer &shell = shell_explorers[1]; // which shell is going to be written to the file, 0 - exterior, 1 - interior
-            std::cout << "writing the result to cityjson file...\n";
-            FileIO::write_JSON(path + delimiter + writeFilename, shell, lod);
-        }
+        //     // output
+        //     std::string writeFilename = "interior_lod=" + lod_string + "_" + "m=" + minkowski_string + ".json";
+        //     const Shell_explorer &shell = shell_explorers[1]; // which shell is going to be written to the file, 0 - exterior, 1 - interior
+        //     std::cout << "writing the result to cityjson file...\n";
+        //     FileIO::write_JSON(path + delimiter + writeFilename, shell, lod);
+        // }
 
         // write file
-        // OFF
-        if (OUTPUT_OFF) {
+        // STL
+        if (OUTPUT_STL) {
 
             // get lod string
             std::string lod_string;
@@ -265,13 +261,10 @@ int main(int argc, char *argv[]) {
             std::string minkowski_string = std::to_string(minkowski_param);
 
             // output
-            std::string writeFilename = "exterior_lod=" + lod_string + "_" + "m=" + minkowski_string + ".off";
-            std::cout << "writing the result to OFF file...\n";
-            bool status = FileIO::write_OFF(path + delimiter + writeFilename, big_nef);
-            if (!status) {
-                std::cerr << "can not write .off file, please check" << '\n';
-                return 1;
-            }
+            std::cout << "writing the result to STL file...\n";
+            Mesh output;
+            CGAL::convert_nef_polyhedron_to_polygon_mesh(big_nef, output, true);
+            CGAL::IO::write_polygon_mesh(path + "/nef-Output.stl", output, CGAL::parameters::stream_precision(17));
 
         }
 
@@ -313,7 +306,7 @@ int main(int argc, char *argv[]) {
 
 
         // for mark the output files
-        unsigned int num_off = 1;
+        unsigned int num_stl = 1;
         unsigned int num_json = 1;
 
         // for tracking which adjacency is currently being processed
@@ -440,32 +433,32 @@ int main(int argc, char *argv[]) {
         // ------------------------------------------------------------------------------------------------------------------
         // write file
         // json
-        if (OUTPUT_JSON) {
+        // if (OUTPUT_JSON) {
 
-            // get lod string
-            std::string lod_string;
-            if (std::abs(lod - 1.2) < epsilon)lod_string = "1.2";
-            if (std::abs(lod - 1.3) < epsilon)lod_string = "1.3";
-            if (std::abs(lod - 2.2) < epsilon)lod_string = "2.2";
+        //     // get lod string
+        //     std::string lod_string;
+        //     if (std::abs(lod - 1.2) < epsilon)lod_string = "1.2";
+        //     if (std::abs(lod - 1.3) < epsilon)lod_string = "1.3";
+        //     if (std::abs(lod - 2.2) < epsilon)lod_string = "2.2";
 
-            // get minkowski param string
-            std::string mink_str = std::to_string(minkowski_param).substr(0, 5);
+        //     // get minkowski param string
+        //     std::string mink_str = std::to_string(minkowski_param).substr(0, 5);
 
-            // get the sequence of the file
-            std::string num_str = std::to_string(num_json);
+        //     // get the sequence of the file
+        //     std::string num_str = std::to_string(num_json);
 
-            // output
-            std::string writeFilename = "lod=" + lod_string + "_" + "m=" + mink_str + "_" + num_str + ".json";
-            const Shell_explorer &shell = shell_explorers[1]; // which shell is going to be written to the file, 0 - exterior, 1 - interior
-            std::cout << "writing the result to cityjson file...\n";
-            FileIO::write_JSON(path + delimiter + writeFilename, shell, lod);
+        //     // output
+        //     std::string writeFilename = "lod=" + lod_string + "_" + "m=" + mink_str + "_" + num_str + ".json";
+        //     const Shell_explorer &shell = shell_explorers[1]; // which shell is going to be written to the file, 0 - exterior, 1 - interior
+        //     std::cout << "writing the result to cityjson file...\n";
+        //     FileIO::write_JSON(path + delimiter + writeFilename, shell, lod);
 
-            ++num_json; // increment the file sequence
-        }
+        //     ++num_json; // increment the file sequence
+        // }
 
         // write file
-        // OFF
-        if (OUTPUT_OFF) {
+        // STL
+        if (OUTPUT_STL) {
 
             // get lod string
             std::string lod_string;
@@ -477,18 +470,15 @@ int main(int argc, char *argv[]) {
             std::string mink_str = std::to_string(minkowski_param).substr(0, 5);
 
             // get the sequence of the file
-            std::string num_str = std::to_string(num_off);
+            std::string num_str = std::to_string(num_stl);
 
             // output
-            std::string writeFilename = "lod=" + lod_string + "_" + "m=" + mink_str + "_" + num_str + ".off";
-            std::cout << "writing the result to OFF file...\n";
-            bool status = FileIO::write_OFF(path + delimiter + writeFilename, big_nef_all);
-            if (!status) {
-                std::cerr << "can not write .off file, please check" << '\n';
-                return 1;
-            }
+            std::cout << "writing the result to STL file...\n";
+            Mesh output;
+            CGAL::convert_nef_polyhedron_to_polygon_mesh(big_nef_all, output, true);
+            CGAL::IO::write_polygon_mesh(path + "/nef-Output.stl", output, CGAL::parameters::stream_precision(17));
 
-            ++num_off; // increment the file sequence
+            ++num_stl; // increment the file sequence
 
         }
 
@@ -497,9 +487,5 @@ int main(int argc, char *argv[]) {
         return EXIT_SUCCESS;
 
     }
-
-
-    //std::cout << "no process performed, exit" << '\n';
-    //return EXIT_SUCCESS;
 
 }

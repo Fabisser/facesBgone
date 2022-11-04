@@ -67,14 +67,12 @@ bool is_small_hole(halfedge_descriptor h, Mesh & mesh,
 
 int main(int argc, char* argv[])
 {
-
-
-  std::string filepath = DATA_PATH + std::string("/dataset_1.stl");
-  const std::string filename = (argc > 1) ? argv[1] : CGAL::data_file_path(filepath);
+  const std::string directory = (argc > 1) ? argv[1] : "";
   Mesh mesh;
-  if(!PMP::IO::read_polygon_mesh(filename, mesh))
+  std::string filepath = directory + std::string("/data/Outputtile_mesh.stl");
+  if(!PMP::IO::read_polygon_mesh(filepath, mesh))
   {
-    std::cerr << "Invalid input." << std::endl;
+    std::cerr << "Invalid input." << filepath << std::endl;
     return 1;
   }
   // From Polygon_mesh_processing/hole_filling_example_SM.cpp
@@ -115,7 +113,7 @@ int main(int argc, char* argv[])
   PMP::polygon_soup_to_polygon_mesh(points, polygons, finalmesh);
 
   // Output
-  CGAL::IO::write_polygon_mesh("dataset_1_output.stl", finalmesh, CGAL::parameters::stream_precision(17));
-  std::cout << "Final Mesh written to: ..." << std::endl;
+  CGAL::IO::write_polygon_mesh(directory + "/data/hole-filling-Output.stl", finalmesh, CGAL::parameters::stream_precision(17));
+  std::cout << "Final Mesh written to " + directory + "/data/hole-filling-Output.stl" << std::endl;
   return 0;
 }
