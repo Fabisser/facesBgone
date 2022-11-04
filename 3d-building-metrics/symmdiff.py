@@ -6,11 +6,7 @@ import pyvista as pv
 import math
 import os
 from helpers.geometry import surface_normal, project_2d, axes_of_normal
-<<<<<<< Updated upstream
 from shapely.geometry import MultiPolygon, Polygon, LineString
-=======
-from shapely.geometry import MultiPolygon, Polygon
->>>>>>> Stashed changes
 import scipy
 from sklearn.cluster import AgglomerativeClustering
 import rtree.index
@@ -95,8 +91,7 @@ def to_3d(polygon, normal, origin):
     xa, ya = axes_of_normal(normal)
 
     mat = np.array([xa, ya])
-    pts = np.array(polygon.boundary.coords)
-
+    pts = np.array(polygon.boundary.coords)[0:-1]
     return np.dot(pts, mat) + origin
 
 
@@ -149,7 +144,7 @@ def symmetric_difference(meshes):
     # labels = ndarray of cluster labels associated with each face, n_clusters = integer [number of clusters]
     labels, n_clusters = cluster_meshes(meshes)
 
-    all_idxs = [[],[]]
+    all_idxs = []
     # for every cluster
     for plane in range(n_clusters):
         # For every mesh, extract the index of the faces that belong to this cluster
@@ -168,6 +163,7 @@ def symmetric_difference(meshes):
         # get the normal of the first face of the first mesh
         normal = msurfaces[0].face_normals[0]
         
+        
         # Create the two 2D polygons by projecting the faces
         
         polys = [project_mesh(msurface, normal, origin) for msurface in msurfaces]
@@ -176,37 +172,38 @@ def symmetric_difference(meshes):
         for i in range(1, len(polys)):
             inter = inter.intersection(polys[i])
         
-        if inter.area > 0.01:
-            # creates list of polygons and multipolygons (one for each mesh)
-            polys_1b.append(polys[0])
-            polys_2b.append(polys[1])
-            
-            all_idxs[0] = all_idxs[0] + idxs[0]
-            all_idxs[1] = all_idxs[1] + idxs[1]  
+        if inter.area > 0.1:
+            # # creates list of polygons and multipolygons (one for each mesh)
+            # polys_1b.append(polys[0])
+            # polys_2b.append(polys[1])
+            all_idxs.append(idxs[0])
+            # print(normal)  
+            proj(polys[0], polys[1], origin, normal, areas_inter, areas_symdif)
+    return all_idxs, areas_inter, areas_symdif
                                                
 
     # """All intersections"""
     # loop in polys1b,2b and create the union in each, and then intersect the two.
-    if len(polys_1b) != 0:
+def proj(polys_1b, polys_2b, origin, normal, areas_inter, areas_symdif):
+    # if len(polys_1b) != 0:
         # plotter = pv.Plotter()
         # for msurface in msurfaces:
         #     actor =  plotter.add_mesh(msurface, opacity = 0.3, color = "red", show_edges = True)
         # plotter.show()
-        union_1b = polys_1b[0]
-        for i in range(1, len(polys_1b)):
-            union_1b = union_1b.union(polys_1b[i])
-        union_2b = polys_2b[0]
-        for i in range(1, len(polys_2b)):
-            union_2b = union_2b.union(polys_2b[i])
+        union_1b = polys_1b
+        # for i in range(1, len(polys_1b)):
+        #     union_1b = union_1b.union(polys_1b[i])
+        union_2b = polys_2b
+        # for i in range(1, len(polys_2b)):
+        #     union_2b = union_2b.union(polys_2b[i])
         inter = union_2b.intersection(union_1b)   
         symdif = union_2b.symmetric_difference(union_1b)
-        # Set the normal and origin point for a plane to project the faces
-        origin = meshes[0].extract_cells(all_idxs[0][0]).extract_surface().clean().points[0]
-        # get the normal of the first face of the first mesh
-        normal = meshes[0].extract_cells(all_idxs[0][0]).extract_surface().face_normals[0]
+        # # Set the normal and origin point for a plane to project the faces
+        # origin = meshes[0].extract_cells(all_idxs[0][0]).extract_surface().clean().points[0]
+        # # get the normal of the first face of the first mesh
+        # normal = meshes[0].extract_cells(all_idxs[0][0]).extract_surface().face_normals[0]
         
-        if inter.area > 0.01:
-<<<<<<< Updated upstream
+        if inter.area > 0.1:
             # if inter.type == "MultiPolygon":            
             #     #  project back to 3D
             #     for geom in inter.geoms:
@@ -221,25 +218,29 @@ def symmetric_difference(meshes):
             #         common_mesh_inter = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))
             #         common_mesh_inter["area"] = [inter.area]
             #         areas_inter.append(common_mesh_inter)
-        
-            if symdif.area > 0.01:
+            
+            #print("Passed cluster")
+            
+            if symdif.area > 0.001:
                 if symdif.type == "MultiPolygon":
                     for geom in symdif.geoms:
-                        if len(list(geom.interiors)) > 0:
-                            for interior in geom.interiors:
-                                cut = LineString([(geom.bounds[0], interior.coords[0][1]), (geom.bounds[2], interior.coords[0][1])])
-                                cut = cut.buffer(0.001)
-                                geomcut = geom.difference(cut)
-                                for piece in geomcut.geoms:
-                                    pts = to_3d(piece, normal, origin)
-                                    common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                          
-                                    common_mesh_symdif["area"] = [symdif.area]
-                                    areas_symdif.append(common_mesh_symdif) 
-                        else:
-                            pts = to_3d(geom, normal, origin)  
-                            common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                          
-                            common_mesh_symdif["area"] = [symdif.area]
-                            areas_symdif.append(common_mesh_symdif)
+                        if geom.area > 0.01:
+                            if len(list(geom.interiors)) > 0:
+                                for interior in geom.interiors:
+                                    cut = LineString([(geom.bounds[0], interior.coords[0][1]), (geom.bounds[2], interior.coords[0][1])])
+                                    cut = cut.buffer(0.001)
+                                    geomcut = geom.difference(cut)
+                                    for piece in geomcut.geoms:
+                                        pts = to_3d(piece, normal, origin)
+                                        common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                          
+
+                                        common_mesh_symdif["area"] = [symdif.area]
+                                        areas_symdif.append(common_mesh_symdif) 
+                            else:
+                                pts = to_3d(geom, normal, origin)  
+                                common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                        
+                                common_mesh_symdif["area"] = [symdif.area]
+                                areas_symdif.append(common_mesh_symdif)
                         
                 if symdif.type == "Polygon":
                     if len(list(symdif.interiors)) > 0:
@@ -250,6 +251,7 @@ def symmetric_difference(meshes):
                                 for piece in geomcut.geoms:
                                     pts = to_3d(piece, normal, origin)
                                     common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                          
+                                    
                                     common_mesh_symdif["area"] = [symdif.area]
                                     areas_symdif.append(common_mesh_symdif) 
                     else:
@@ -257,45 +259,10 @@ def symmetric_difference(meshes):
                         common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))                          
                         common_mesh_symdif["area"] = [symdif.area]
                         areas_symdif.append(common_mesh_symdif)
-=======
-            if inter.type == "MultiPolygon":            
-                #  project back to 3D
-                for geom in inter.geoms:
-                    # print("Is Geometry Valid?: ", geom.is_valid)                    
-                    pts = to_3d(geom, normal, origin)                    
-                    common_mesh_inter = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts)))) 
-                    common_mesh_inter["area"] = [geom.area]
-                    areas_inter.append(common_mesh_inter)
-                    
-            if inter.type == "Polygon":
-                    pts = to_3d(inter, normal, origin)
-                    common_mesh_inter = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))
-                    common_mesh_inter["area"] = [inter.area]
-                    areas_inter.append(common_mesh_inter)
-        
-            if symdif.area > 0.01:
-                if symdif.type == "MultiPolygon":
-                    for geom in symdif.geoms:                
-                        pts = to_3d(geom, normal, origin)                    
-                        common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts)))) 
-                        common_mesh_symdif["area"] = [symdif.area]
-                        areas_symdif.append(common_mesh_symdif)
-                        
-                if symdif.type == "Polygon":
-                    pts = to_3d(inter, normal, origin)
-                    common_mesh_symdif = pv.PolyData(pts, faces=[len(pts)] + list(range(len(pts))))
-                    common_mesh_symdif["area"] = [symdif.area]
-                    areas_symdif.append(common_mesh_symdif)
->>>>>>> Stashed changes
+            else:
+                print("ignored")
+        return 0
 
-
-        return all_idxs, areas_inter, areas_symdif
-    else:
-<<<<<<< Updated upstream
-        return 0, 0, 0
-=======
-        return 0,0,0
->>>>>>> Stashed changes
 
 
 def intersect_pairs(mesh, neighbours):
@@ -349,11 +316,7 @@ def abs_distance(x, y):
 float_formatter = "{:.3f}".format
 np.set_printoptions(formatter={'float_kind':float_formatter})
 
-<<<<<<< Updated upstream
-filename = "/Users/fabzv/Desktop/Delft/Synthesis-Project/3d-building-metrics/row.json"
-=======
-filename = "fourbuildings.json"
->>>>>>> Stashed changes
+filename = "data/dataset_3.json"
 
 with open(filename) as file:
     cm = json.load(file)
@@ -389,10 +352,13 @@ clustered_buildings = {}
 
 # t = 2*t/len(cm["CityObjects"])
 finalmesh = pv.PolyData()
+finalmesh = finalmesh.triangulate()
+passed_building = []
 for building_part in cm['CityObjects']:           
                 
     if '-' in building_part:    
         print(building_part)
+        passed_building.append(building_part)
         
         """ ACCESSing CityJson data model *** NOT TRIANGULATED """ # --> no need to access 
         
@@ -424,24 +390,16 @@ for building_part in cm['CityObjects']:
             
  
         for nearby_building in range(len(meshes)):
-            # print(meshes[nearby_building].n_cells) # 44
-            # if meshes_id[nearby_building] in passedbuilding:
-            #    continue
             all_idxs, intersection, symdif = symmetric_difference([main_mesh, meshes[nearby_building]])
-            if all_idxs != 0:
+            if len(all_idxs) != 0:
+                #print(all_idxs)
                 numf_b2 = meshes[nearby_building].n_cells
                 merged_mesh = main_mesh + meshes[nearby_building]
                 # print("nearby building")
                 # print(meshes_id[nearby_building])
-<<<<<<< Updated upstream
                 # inter_mesh = intersection[0]
                 # for i in range(1, len(intersection)):
                 #     inter_mesh = inter_mesh + intersection[i]
-=======
-                inter_mesh = intersection[0]
-                for i in range(1, len(intersection)):
-                    inter_mesh = inter_mesh + intersection[i]
->>>>>>> Stashed changes
                     
                 symdif_mesh = symdif[0]
                 for i in range(1, len(symdif)):
@@ -451,78 +409,76 @@ for building_part in cm['CityObjects']:
                 faces1b = []
                 faces2b = []
                 it = 0
-                new_nearby_mesh = meshes[nearby_building]
+                nearby_mesh = meshes[nearby_building]
                 new_main_mesh = main_mesh
-                new_merged_mesh = merged_mesh
                 
                 
                 faces_to_remove = []
-                for idx in all_idxs:                    
-                    if it==1:
-                        faces_1 = [i for i in [i+numf_b1 for i in idx]]
-                    else:               
-                        #print(idx)
-                        faces_0= [i for i in idx]  
-                        main_mesh = main_mesh.remove_cells(idx)
-                    # when it's done with the first sublist, increase the it. 
-                    it = 1 
-                
-                faces_to_remove = faces_0 + faces_1        
-                merged_mesh = merged_mesh.remove_cells(faces_to_remove)
+                #removed_mesh = merged_mesh.extract_cells(all_idxs[0])
+                idx = sum(all_idxs, [])
+                #print(idx)
+                main_mesh = main_mesh.remove_cells(idx)             
+                removed_mesh = merged_mesh.extract_cells(idx)        
+                #merged_mesh = merged_mesh.remove_cells(faces_to_remove)
 
                 # RECONSTRUCTING SURFACE WITH new_merged_mesh.points
-                reconstructed_mesh = new_merged_mesh.reconstruct_surface()
+                #reconstructed_mesh = new_merged_mesh.reconstruct_surface()
             
-            
+                # print(0.1*symdif_mesh.face_normals[0])
+                # plane = pv.Plane(center = symdif_mesh.center, 
+                #                 direction = symdif_mesh.face_normals[0], i_size = xmax-xmin+1, j_size = ymax-ymin+1)
                 
-#             # plot both buildings
-<<<<<<< Updated upstream
+                #main_mesh.points += symdif_mesh.face_normals[0]/2
+                #main_mesh = main_mesh + main_mesh.extrude(-symdif_mesh.face_normals[0], capping = False)
+                #main_mesh = main_mesh.clip(origin = symdif_mesh.center, normal = -symdif_mesh.face_normals[0])
+            # plot both buildings
+                # test = main_mesh + symdif_mesh
+                # test.save("test.stl")
+                # test2 = merged_mesh + symdif_mesh
+                # test2.save("test2.stl")
                 # plotter = pv.Plotter()
+                # plotter.set_background("white")
                 # ## add meshes
-                # actor =  plotter.add_mesh(main_mesh, opacity = 0.3, color = "red", show_edges = True)
-                # # actor10 =  plotter.add_mesh(reconstructed_mesh, opacity = 0.3, color = "yellow", show_edges = True)
+                # actor =  plotter.add_mesh(main_mesh, color = "yellow", show_edges = True)
+                # #actor2 =  plotter.add_mesh(nearby_mesh, opacity = 0.3, show_edges = True)
+                # actor10 =  plotter.add_mesh(symdif_mesh, opacity = 0.3, color = "yellow")
                 
-                # actor1 =  plotter.add_mesh(symdif_mesh, color = "green", show_edges = True)
+                # #actor1 =  plotter.add_mesh(removed_mesh, color = "red", show_edges = True)
                 # # actor2 =  plotter.add_mesh(inter_mesh, color = "blue", show_edges = True)
                 # ## add points of meshes
-                # # actor3 = plotter.add_points(symdif_mesh.points, render_points_as_spheres=True, point_size=10.0, color='pink')
+                # actor3 = plotter.add_mesh(plane, color='red', opacity = 0.3)
                 # #actor4 = plotter.add_points(inter_mesh.points, render_points_as_spheres=True, point_size=10.0)
                 # # actor5 = plotter.add_points(new_merged_mesh.points, render_points_as_spheres=True, point_size=10.0, color='yellow')            
                 # plotter.show()
-=======
-                plotter = pv.Plotter()
-                ## add meshes
-                actor =  plotter.add_mesh(main_mesh, opacity = 0.3, color = "red", show_edges = True)
-                # actor10 =  plotter.add_mesh(reconstructed_mesh, opacity = 0.3, color = "yellow", show_edges = True)
+                # plotter = pv.Plotter()
+                # plotter.set_background("white")
+                # ## add meshes
+                # actor =  plotter.add_mesh(merged_mesh, opacity = 0.3, show_edges = True)
+                # # actor10 =  plotter.add_mesh(reconstructed_mesh, opacity = 0.3, color = "yellow", show_edges = True)
                 
-                actor1 =  plotter.add_mesh(symdif_mesh, color = "green", show_edges = True)
+                # actor1 =  plotter.add_mesh(symdif_mesh, color = "green", show_edges = True)
                 # actor2 =  plotter.add_mesh(inter_mesh, color = "blue", show_edges = True)
                 ## add points of meshes
                 # actor3 = plotter.add_points(symdif_mesh.points, render_points_as_spheres=True, point_size=10.0, color='pink')
                 #actor4 = plotter.add_points(inter_mesh.points, render_points_as_spheres=True, point_size=10.0)
                 # actor5 = plotter.add_points(new_merged_mesh.points, render_points_as_spheres=True, point_size=10.0, color='yellow')            
-                plotter.show()
->>>>>>> Stashed changes
-
-                # finalbuilding = finalbuilding+new_merged_mesh
-                # finalbuilding = finalbuilding+symdif_mesh
-                # new_merged_mesh.save("test.ply")
-                symdif_mesh.points += t
-                finalmesh = finalmesh + symdif_mesh
+                #plotter.show()
+                # symdif_mesh = symdif_mesh.triangulate()
+                # symdif_mesh.flip_normals()
+                if not (meshes_id[nearby_building] in passed_building): 
+                    symdif_mesh.points += t
+                    finalmesh += symdif_mesh
         main_mesh.points += t
-        finalmesh = finalmesh + main_mesh
-            
+        finalmesh += main_mesh
+        print("done")
+finalmesh = finalmesh.clean()
 plotter = pv.Plotter()
 ## add meshes
 actor =  plotter.add_mesh(finalmesh, opacity = 0.3, color = "red", show_edges = True)
             
 plotter.show()   
 
-<<<<<<< Updated upstream
-finalmesh.save("rowoutput.ply")
-=======
-finalmesh.save("output.ply")
->>>>>>> Stashed changes
+finalmesh.save("dataset_3stage2.stl")
 
 
 #             # SECTION: turn the new merged mesh into our own data model

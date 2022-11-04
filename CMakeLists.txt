@@ -1,13 +1,9 @@
-project(convex_hull)
-cmake_minimum_required(VERSION 3.13)
-set(CMAKE_CXX_STANDARD 14)	
+cmake_minimum_required(VERSION 3.0.0)
+project(geocfd VERSION 0.1.0)
+
+set (CMAKE_CXX_STANDARD 11) # cpp17 does not understand standard libraries
 
 include_directories( ${CMAKE_SOURCE_DIR}/include ) # include json.hpp
-include_directories( ${CMAKE_SOURCE_DIR}/src ) # include json.hpp
-
-add_subdirectory(pybind11)
-
-pybind11_add_module(convex_hull src/main.cpp)
 
 find_package(CGAL) # for CGALgeocfd
 if (CGAL_FOUND)
@@ -17,8 +13,11 @@ else()
 	message(SEND_ERROR "this code requires the CGAL library")
 	return()
 endif()
-
-target_link_libraries(convex_hull CGAL::CGAL)
+# add PCL library
+find_package(PCL 1.3 REQUIRED COMPONENTS common io)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
 include(CTest)
 enable_testing()
 
@@ -27,7 +26,8 @@ add_definitions(
   -DDATA_PATH=\"${PROJECT_SOURCE_DIR}/data\"
 )
 
+add_executable(geocfd src/main.cpp)
+target_link_libraries(geocfd ${PCL_LIBRARIES})
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-set(CMAKE_BUILD_TYPE Release)
 include(CPack)

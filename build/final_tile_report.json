@@ -1,0 +1,1957 @@
+{
+  "all_errors": [
+    102,
+    104
+  ],
+  "dataset_errors": [],
+  "features": [
+    {
+      "errors": [],
+      "id": "none",
+      "primitives": [
+        {
+          "errors": [
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 1465",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 2041",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 2300",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 2815",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 3852",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 5851",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 5852",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 6113",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 6506",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 6605",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 6711",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 6917",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 7417",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 7628",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 8251",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 8692",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 9173",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 9174",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 9347",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 10810",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 12689",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 12690",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 16676",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 17190",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 17196",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 17354",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 17623",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 22647",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 22794",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 22859",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 24443",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 27608",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 30292",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 30794",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 30800",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 33071",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 35082",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 35121",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 39505",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 45264",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 45266",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 45475",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 51517",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 51518",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 51535",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 51536",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 51925",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 51947",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 51987",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 51988",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 52483",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 52487",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 52488",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 52498",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 52499",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53305",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53313",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53651",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53682",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53776",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53779",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53807",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53809",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53832",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53833",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53989",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 53993",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 54013",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 54014",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 54611",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 55256",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 55257",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 55560",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 55562",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 55588",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 55589",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 56931",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57120",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57124",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57488",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57494",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57514",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57563",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57880",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57891",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57908",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57923",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 57992",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 58099",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 58127",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 59226",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 61161",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 61704",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 61705",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 61893",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 61894",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62209",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62223",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62239",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62240",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62242",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62243",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62426",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62442",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62770",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62787",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62823",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62825",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62918",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62919",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62932",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62933",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62970",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 62979",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 63358",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 63393",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 63594",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 63597",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 64187",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 64188",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 64469",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 64480",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 64490",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 64549",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 64550",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 64712",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 64713",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65138",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65142",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65397",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65502",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65518",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65573",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65581",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65772",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65776",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65777",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65908",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 65909",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 66320",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 67608",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 67615",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 67777",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 67795",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 67880",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 67893",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 68209",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 68214",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 68246",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 69332",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 69333",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 69818",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 69820",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 70160",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 70187",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 70382",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 70430",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 70452",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 70467",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 70546",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 70565",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 70670",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 70675",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 71537",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 71539",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 71873",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72090",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72094",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72491",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72492",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72556",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72558",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72888",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72890",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72926",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72932",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72934",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 72941",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 73674",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 73748",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 73909",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 74007",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 74100",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 74109",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 74564",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 74565",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 74800",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 74811",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 75513",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 75514",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 75734",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 75744",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 75751",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 76037",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 76137",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 76551",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 76553",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 76600",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 77049",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 77344",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 77345",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 77829",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 77865",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 77866",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 78406",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 78426",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 78455",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 78456",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 78663",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 78664",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 78665",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 78681",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 79528",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 79529",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 79828",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 80171",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 80586",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 80588",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 80589",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 80781",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 80782",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 80904",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 80906",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 81398",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 81744",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 81878",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 81879",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 82708",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 82716",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 82873",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 82876",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 102,
+              "description": "CONSECUTIVE_POINTS_SAME",
+              "id": "0 | 82895",
+              "info": "",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 2583",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 2859",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 2997",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 3729",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 3993",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 5656",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 5803",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 5999",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 6152",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 6153",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 6508",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 6789",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 8185",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 8851",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 10253",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 10254",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 10488",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 11928",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 12691",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 16864",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 18829",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 19703",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 20124",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 21546",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 21547",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 22861",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 22920",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 22921",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 23214",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 23215",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 23527",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 30695",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 33075",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 33078",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 33428",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 35102",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 41721",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 41722",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 45815",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            },
+            {
+              "code": 104,
+              "description": "RING_SELF_INTERSECTION",
+              "id": "0 | 70987",
+              "info": " outer ring (a triangle) is collapsed to a line",
+              "type": "Error"
+            }
+          ],
+          "id": "0",
+          "numberfaces": 82991,
+          "numbershells": 1,
+          "numbervertices": 44221,
+          "type": "Solid",
+          "validity": false
+        }
+      ],
+      "type": "GenericObject",
+      "validity": false
+    }
+  ],
+  "features_overview": [
+    {
+      "total": 1,
+      "type": "GenericObject",
+      "valid": 0
+    }
+  ],
+  "input_file": "filled_final_tile.obj",
+  "input_file_type": "OBJ",
+  "parameters": {
+    "overlap_tol": -1.0,
+    "planarity_d2p_tol": 0.01,
+    "planarity_n_tol": 20.0,
+    "snap_tol": 0.001
+  },
+  "primitives_overview": [
+    {
+      "total": 1,
+      "type": "Solid",
+      "valid": 0
+    }
+  ],
+  "time": "Fri Oct 28 13:22:28 2022 CEST",
+  "type": "val3dity_report",
+  "val3dity_version": "2.3.1",
+  "validity": false
+}
