@@ -1,40 +1,122 @@
-# My Project
+# geoCFD
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+Process geometry for CFD simulation - remove internal faces between adjacent buildings.
 
-Remove internal faces from [CityJSON](http://www.cityjson.org/ "CityJSON") buildings. Two methods are present, using [CGAL](https://www.cgal.org/ "CGAL") libraries. A python script to calculate adjancancy and remove internal faces is also included.
+- support for all `LoD` levels in `cityjson`(lod 1.2, lod 1.3, lod 2.2).
 
-## Documentation
+- support `multithreading` process (for one adjacent block).
 
-Read the paper [here](https://www.tudelft.nl/en/education/programmes/masters/geomatics/msc-geomatics/programme/synthesis-project/)
+- support exporting as `.json` file or `.off` file.
 
-## Requirements
+- visualisation:
 
-This project uses C++ and Python. Python packages can be install by
-`pip install -r requirements`
+	[ninja](https://ninja.cityjson.org/)
 
-For C++, we use CGAL. To install on Linux or Windows (WSL) use
-`sudo apt-get install libcgal-dev`
-To install on MacOS use
-`brew install cgal`
+- validate the result file via: 
+
+	- `val3dity`  - [validate](http://geovalidation.bk.tudelft.nl/val3dity/) the geometry
+  
+  	- `validator` - [validate](https://validator.cityjson.org/) the `cityjson` file
 
 ## Usage
 
-Run the bash file.
-`bash something.sh`
-
-All the possible options can be checked using
-`bash something.sh -h`
-
-```markdown
-Usage:
-
-	bash something.sh FILENAME.json [OPTIONS]
-
-	Will calculate the adjancacy and remove internal faces using both methods
-
-Options:
-
-	-m minkowski/hole-filling	Choose one of the two methods to be applied. Both will run if this flag is not included
-	-h		                Show help
+Compile and build it, run the command `./geocfd --help` to print the usage information:
+```bash
+usage: geocfd --dataset=string --adjacency=string --path_result=string [options] ...
+options:
+  -d, --dataset               dataset (.json) (string)
+  -a, --adjacency             adjacency file (.txt) (string)
+  -p, --path_result           where the results will be saved (string)
+  -l, --lod                   lod level (double [=2.2])
+  -m, --minkowski             minkowski value (double [=0.01])
+  -e, --target edge length    target edge length for remeshing (double [=3])
+      --remesh                activate remeshing processing (warning: time consuming)
+      --multi                 activate multi threading process
+      --json                  output as .json file format
+      --off                   output as .off file format
+      --all                   adjacency file contains all adjacent blocks
+      --help                  print this message
 ```
+**Note**
+
+- for **all adjacency** mode, multi threading should not be enabled (if enabled from the console, it will be switched off). 
+
+	The reason is multi threading didn't work as desired when reading all adjacencies.
+
+- for **all adjacency** mode, flag `--all` must be provided.
+
+## examples
+#### example 1 - read in one adjacency file, enable multi threading, output as .off file:
+```bash
+./geocfd -d 3dbag_v210908_fd2cee53_5907.json -a adjacency5.txt -p D:\SP\geoCFD\data --multi --off
+```
+dataset: [dataset](https://github.com/zfengyan/geoCFD/blob/v1/data/3dbag_v210908_fd2cee53_5907.json)
+
+adjacency file: [adjacency5.txt](https://github.com/zfengyan/geoCFD/blob/v1/data/dataset_5/adjacency5.txt)
+
+#### example 2 - read in all adjacencies file, in combination with --all flag:
+```bash
+./geocfd -d dataset.json -a adjacencies.txt -p D:\geoCFD\data --all --off
+```
+dataset: [dataset](https://github.com/zfengyan/geoCFD/blob/v1/data/3dbag_v210908_fd2cee53_5907.json)
+
+adjacencies file: [adjacencies.txt](https://github.com/zfengyan/geoCFD/blob/v1/data/all_adjacencies/all_adjacency_example.txt)
+
+### Note
+
+* if the program does not exit, you may need to re-open your console again and re-run it. (for example, dataset_2).
+
+    This may be due to the complex geometry of the buildings in `dataset_2`, one of the buildings contain holes.
+
+* the `minkowski param` is set to `0.01` by default.
+
+	The param can be altered, but proceed with caution, too small minkowski param may not fill the holes of the building in `dataset_2`.
+
+## Prerequisite
+
+[CGAL](https://www.cgal.org/) - The version should be above `5.0` since we can use the `header-only`, which means we don't have to manually compile `CGAL`.
+
+install `CGAL` via [vcpkg](https://vcpkg.io/en/index.html):
+
+check this -> 
+
+[install vcpkg](https://www.youtube.com/watch?v=b7SdgK7Y510)
+
+[Download CGAL for Windows](https://www.cgal.org/download/windows.html)
+
+## Compile info
+
+C++ Standard: `C++ 11`
+
+Compiler: `MSVC`
+
+Generator: `Ninja`
+
+Commands:
+```bash
+"..\MICROSOFTVISUALSTUDIO\2019\COMMUNITY\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\CMake\bin\cmake.exe"  
+-G "Ninja"  
+-DCMAKE_BUILD_TYPE:STRING="RelWithDebInfo" 
+-DCMAKE_INSTALL_PREFIX:PATH="..\geoCFD\out\install\x64-Release" 
+-DCMAKE_C_COMPILER:FILEPATH="../MicrosoftVisualStudio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe" 
+-DCMAKE_CXX_COMPILER:FILEPATH="../MicrosoftVisualStudio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe"  
+-DCMAKE_MAKE_PROGRAM="..\MICROSOFTVISUALSTUDIO\2019\COMMUNITY\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe" 
+-DCMAKE_TOOLCHAIN_FILE="../dev/vcpkg/scripts/buildsystems/vcpkg.cmake" 
+```
+The commands are the information of compiler and generator(for example, the file path of `cl.exe` and `ninja.exe`), which should
+be generated by your IDE automatically.
+
+## Other platforms
+
+If you use other platforms (such as `Linux` or `MacOS`), you can refer to `CMakeLists.txt` file and use it to build a `CMake` project using `src`, `include` and `data` folder.
+
+## Attention
+- if the `input adjacency file` contains multiple adjacent blocks, be sure to add `--all` flag, otherwise geoCFD may exit with unkown errors.
+- currently `multi threading` doesn't work with the input of multiple adjacent blocks, thus even the flag `--multi` is specified, geoCFD will not enable multi threading process.
+- there is one possibility that `minkowski sum` will be in executing status for unkown time, if so restart geoCFD.
+- `remeshing` is sort of `beta` version, it should be warned that `remeshing` will be time-consuming, thus it is not recommended to activate.
+- it may take time for multiple adjacent blocks.
+- all adjacencies file need to meet some specific "format", see [here](https://github.com/zfengyan/geoCFD/blob/v1/data/adjacencies.txt) for an example (please be aware that if you download the .txt file you will find it contains 19 lines but in GitHub it only shows 18 lines).
+
 
