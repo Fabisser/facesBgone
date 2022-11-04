@@ -57,10 +57,10 @@ RM = /usr/local/lib/python3.10/site-packages/cmake/data/CMake.app/Contents/bin/c
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/fabzv/Desktop/Delft/Synthesis-Project
+CMAKE_SOURCE_DIR = /Users/fabzv/Desktop/Delft/Synthesis-Project/hole-filling
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/fabzv/Desktop/Delft/Synthesis-Project/build
+CMAKE_BINARY_DIR = /Users/fabzv/Desktop/Delft/Synthesis-Project/hole-filling/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,22 +78,12 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/local/lib/python3.10/site-packages/cmake/data/CMake.app/Contents/bin/cpack --config ./CPackSourceConfig.cmake /Users/fabzv/Desktop/Delft/Synthesis-Project/build/CPackSourceConfig.cmake
+	/usr/local/lib/python3.10/site-packages/cmake/data/CMake.app/Contents/bin/cpack --config ./CPackSourceConfig.cmake /Users/fabzv/Desktop/Delft/Synthesis-Project/hole-filling/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
 package_source/fast: package_source
 .PHONY : package_source/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/local/lib/python3.10/site-packages/cmake/data/CMake.app/Contents/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -117,9 +107,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fabzv/Desktop/Delft/Synthesis-Project/build/CMakeFiles /Users/fabzv/Desktop/Delft/Synthesis-Project/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fabzv/Desktop/Delft/Synthesis-Project/hole-filling/build/CMakeFiles /Users/fabzv/Desktop/Delft/Synthesis-Project/hole-filling/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fabzv/Desktop/Delft/Synthesis-Project/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fabzv/Desktop/Delft/Synthesis-Project/hole-filling/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -147,24 +137,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named geocfd
+# Target rules for targets named hole-filling
 
 # Build rule for target.
-geocfd: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 geocfd
-.PHONY : geocfd
+hole-filling: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hole-filling
+.PHONY : hole-filling
 
 # fast build rule for target.
-geocfd/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/geocfd.dir/build.make CMakeFiles/geocfd.dir/build
-.PHONY : geocfd/fast
+hole-filling/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hole-filling.dir/build.make CMakeFiles/hole-filling.dir/build
+.PHONY : hole-filling/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/geocfd.dir/build.make CMakeFiles/geocfd.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hole-filling.dir/build.make CMakeFiles/hole-filling.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -172,7 +162,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/geocfd.dir/build.make CMakeFiles/geocfd.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hole-filling.dir/build.make CMakeFiles/hole-filling.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -180,7 +170,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/geocfd.dir/build.make CMakeFiles/geocfd.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hole-filling.dir/build.make CMakeFiles/hole-filling.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -193,8 +183,7 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... test"
-	@echo "... geocfd"
+	@echo "... hole-filling"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
