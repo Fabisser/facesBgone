@@ -39,6 +39,25 @@ def to_edges(l):
 # end of functions for adjacency
 
 def main(argv):
+    
+    if argv:
+        if argv[1] == "":
+            thres_inter_area = 0.1
+        else:
+            thres_inter_area = float(argv[1])
+            print("thres_inter_area: ", thres_inter_area)
+    else:
+        thres_inter_area = 0.1
+
+    if argv:
+        if argv[2] == "":
+            thres_cluster_meshes = 0.1
+        else:
+            thres_cluster_meshes = float(argv[2])
+            print("thres_cluster_meshes: ", thres_cluster_meshes)
+    else:
+        thres_cluster_meshes = 0.1
+        
     # Load cityjson
     float_formatter = "{:.3f}".format
     np.set_printoptions(formatter={'float_kind':float_formatter})
@@ -136,7 +155,7 @@ def main(argv):
                             # test adjacency between building and objid
                             # remove from the neighbouring buildings the t, to keep the same relative distance
                             mesh_dict[objid].points -= t
-                            all_idxs, symdif = symmetric_difference([mesh_dict[building], mesh_dict[objid]])
+                            all_idxs, symdif = symmetric_difference([mesh_dict[building], mesh_dict[objid]], thres_inter_area, thres_cluster_meshes)
 
                             if len(symdif) != 0:
                                 # add to the adjacencies
@@ -169,7 +188,7 @@ def main(argv):
                         # test adjacency between building and objid
                         # remove from the neighbouring buildings the t, to keep the same relative distance
                         mesh_dict[objid].points -= t
-                        all_idxs, symdif = symmetric_difference([mesh_dict[building], mesh_dict[objid]])
+                        all_idxs, symdif = symmetric_difference([mesh_dict[building], mesh_dict[objid]], thres_inter_area, thres_cluster_meshes)
                         
                         if len(symdif) != 0:
                             

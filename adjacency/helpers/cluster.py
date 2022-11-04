@@ -32,7 +32,7 @@ def cluster_faces(data: np.ndarray, threshold: int) -> tuple([np.ndarray, int]):
     return clustering.labels_, clustering.n_clusters_
 
 
-def cluster_meshes(meshes, threshold=0.1):
+def cluster_meshes(meshes, threshold):
     """Clusters the faces of the given meshes"""
     
     n_meshes = len(meshes)

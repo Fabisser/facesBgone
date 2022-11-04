@@ -5,7 +5,7 @@ from helpers.geometry import *
 from helpers.cluster import *
 
 
-def symmetric_difference(meshes):
+def symmetric_difference(meshes, thres_inter_area, thres_cluster_meshes):
     """Return the intersection between the surfaces of multiple meshes"""
     
     n_meshes = len(meshes)
@@ -14,7 +14,7 @@ def symmetric_difference(meshes):
 
 
     # labels = ndarray of cluster labels associated with each face, n_clusters = integer [number of clusters]
-    labels, n_clusters = cluster_meshes(meshes)
+    labels, n_clusters = cluster_meshes(meshes, thres_cluster_meshes)
 
     all_idxs = [[],[]]
     # for every cluster
@@ -42,7 +42,7 @@ def symmetric_difference(meshes):
         # Intersect the 2D polygons
         inter = polys[0].intersection(polys[1])
         
-        if inter.area > 0.1:
+        if inter.area > thres_inter_area:
             # project to 2d
             all_idxs[0].append(idxs[0])
             all_idxs[1].append(idxs[1])
