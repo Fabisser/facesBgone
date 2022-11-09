@@ -34,6 +34,10 @@ Special thanks to Stelios Vitalis, Dr. Ken Arroyo Ohori, Dr. Liangliang Nan and 
    - **Hole filling**: uses symmetric difference between adjacent buildings to extend and close each block as one mesh.
    - **Nef Polyhedra**: constructs and merges nef polyhedra from adjacent buildings in a block, applying Minkowski sum to remove gaps between buildings
    
+
+https://user-images.githubusercontent.com/79523968/200867898-803496d9-1459-4ba1-8b6e-f1b55308a27a.mov
+
+
 ## Documentation
 A detailed description of the methods and parameters can be found in the final report [here](https://www.tudelft.nl/en/education/programmes/masters/geomatics/msc-geomatics/programme/synthesis-project/)
 
