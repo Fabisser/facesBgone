@@ -6,7 +6,7 @@ Help()
    echo "facesBgone removes faces between adjacent buildings from a CityJSON dataset in LoD 2.2 (e.g. 3D BAG)."
    echo "For more information, refer to README.md."
    echo
-   echo "Syntax: sh run.sh [h|m|i|c|hole|e|mink]"
+   echo "Syntax: sh run.sh [h|m|i|c|d|e|p]"
    echo
    echo "General parameters:"
    echo "	h	Print this Help."
