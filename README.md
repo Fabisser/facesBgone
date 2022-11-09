@@ -73,6 +73,7 @@ You can also view all optional user-defined parameters by running `sh run.sh -h`
 **cluster_meshes**`-c`: threshold to use in agglomerative clustering. default c = 0.1<br>
 
 ### Hole filling parameters<br>
+Both have to be positive to be considered
 **max_hole**`-hole`: maximum diameter of holes to be filled. default hole = -1<br>
 **max_edges**`-e`: maximum number of edges of holes to be filled. default e = -1<br>
 

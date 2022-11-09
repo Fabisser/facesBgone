@@ -19,7 +19,7 @@ Help()
    echo "	c	threshold to use in agglomerative clustering."
    echo "		default c = 0.1"
    echo
-   echo "Hole filling parameters:"
+   echo "Hole filling parameters (both have to be >0 to be considered):"
    echo "	d	maximum diameter of holes to be filled."
    echo "		default hole = -1"
    echo "	e	maximum number of edges of holes to be filled."
@@ -32,7 +32,7 @@ Help()
 }
 
 # flag definition
-while getopts ":hm:i:c:mink:hole:e:" option; do
+while getopts ":hm:i:c:p:d:e:" option; do
    case $option in
 	h) # display Help
 		Help
@@ -75,10 +75,9 @@ then
     echo "Proceding with both methods..."
 	
 	# run hole_filling => need to modify cpp to take the correct arguments
-	
 	cd ../hole-filling/build/
 	chmod a+x hole-filling
-	./hole-filling $curdir
+	./hole-filling $curdir $max_hole $max_edges
 
 
 
@@ -94,7 +93,7 @@ else
 		echo "Proceeding with Hole Filling Method"
 		cd ../hole-filling/build/
 		chmod a+x hole-filling
-		./hole-filling $curdir
+		./hole-filling $curdir $max_hole $max_edges
 	fi
 
 	if [ "$method" = 2 ]; 
