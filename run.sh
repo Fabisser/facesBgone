@@ -72,7 +72,7 @@ fi
 
 if [ -z $method ];
 then
-    echo "Proceding with both methods..."
+    echo "Proceeding with both methods..."
 	
 	# run hole_filling => need to modify cpp to take the correct arguments
 	cd ../hole-filling/build/

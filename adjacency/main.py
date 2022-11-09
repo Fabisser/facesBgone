@@ -245,4 +245,4 @@ def main(argv):
 if __name__ == "__main__":
     print("Calculating Adjacencies..")
     main(sys.argv[1:])
-    print("Adjacencies saved to ...")
+    print("Adjacencies saved to data/adjacency.txt")
