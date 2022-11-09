@@ -2,8 +2,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
 [![Generic badge](https://img.shields.io/badge/updated-2022-<COLOR>.svg)](https://github.com/Fabisser/Synthesis-Project)
-
-![facesBgone](https://user-images.githubusercontent.com/79523968/200880391-47baeb94-fb50-4fa5-a933-80341f22e32f.jpg)
+<img src="https://user-images.githubusercontent.com/79523968/200880391-47baeb94-fb50-4fa5-a933-80341f22e32f.jpg" width=50% height=50%>
 
 
 ## About the project
