@@ -52,6 +52,8 @@ This application uses C++ and Python, and must be run via a Linux/Unix command l
 2. Run `chmod u+x setup.sh` then`sh setup.sh`: this installs the Python requirements. Python packages can also be installed with `pip install -r requirements`
 3. Run `chmod u+x run.sh`
 
+For MacOS just run `sh setup.sh`
+
 ## Usage
 1. Prepare CityJSON dataset and place in *project_face_removal/adjacency/data/*
 2. Open (WSL) command line from *project_face_removal* folder.
