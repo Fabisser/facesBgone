@@ -38,7 +38,7 @@ Special thanks to Stelios Vitalis, Dr. Ken Arroyo Ohori, Dr. Liangliang Nan and 
 A detailed description of the methods and parameters can be found in the final report [here](https://www.tudelft.nl/en/education/programmes/masters/geomatics/msc-geomatics/programme/synthesis-project/)
 
 ## Folder structure
-- **shared_faces_removal**: project folder where Bash files are saved.
+- **facesBgone-main**: project folder where Bash files are saved.
   - **data**: contains all input and output files.
   - **adjacency**: contains all python scripts.
   - **hole_filling**: contains executable and scripts for Hole Filling method (c++)
@@ -49,7 +49,7 @@ This application uses C++ and Python, and must be run via a Linux/Unix command l
 1. Install [CGAL](https://www.cgal.org/ "CGAL") > v.5.5.1. 
    - To install on Linux or Windows (WSL) use `sudo apt-get install libcgal-dev`
    - To install on MacOS use `brew install cgal`
-2. Run `chmod u+x setup.sh` then`sh setup.sh`: this installs the Python requirements. Python packages can also be installed with `pip install -r requirements`
+2. Run `chmod u+x setup.sh` then `sh setup.sh`: this installs the Python requirements. Python packages can also be installed with `pip install -r requirements`
 3. Run `chmod u+x run.sh`
 
 For MacOS just run `sh setup.sh`
