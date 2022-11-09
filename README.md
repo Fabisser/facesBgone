@@ -58,10 +58,10 @@ For MacOS just run `sh setup.sh`
 1. Prepare CityJSON dataset and place in *project_face_removal/adjacency/data/*
 2. Open (WSL) command line from *project_face_removal* folder.
 3. Run the bash file, optionally specifying method to use and/or parameters. If no parameters are entered, default values will be used and both methods will run.
-   - Syntax: `sh run.sh [h|i|c|mink|h|e|hole]`
-   - - e.g.`sh run.sh` or `sh run.sh -mink 0.002 `
+   - Syntax: `sh run.sh [h|i|c|p|h|e|d]`
+   - - e.g.`sh run.sh` or `sh run.sh -m 2 -p 0.002 `
 4. When prompted, enter file name of CityJSON dataset.
-   - e.g. *buildings.city.json*
+   - e.g. *example.json*
 
 ## Optional: User-defined parameters
 You can also view all optional user-defined parameters by running `sh run.sh -h`.
@@ -73,11 +73,11 @@ You can also view all optional user-defined parameters by running `sh run.sh -h`
 **cluster_meshes**`-c`: threshold to use in agglomerative clustering. default c = 0.1<br>
 
 ### Hole filling parameters<br>
-**max_hole**`-hole`: maximum diameter of holes to be filled. default hole = -1<br>
+**max_hole**`-d`: maximum diameter of holes to be filled. default hole = -1<br>
 **max_edges**`-e`: maximum number of edges of holes to be filled. default e = -1<br>
 
 ### Nef Polyhedra parameters<br>
-**minkowski**`-mink`: value used for minkowski sum. default mink = 0.003<br>
+**minkowski**`-p`: value used for minkowski sum. default mink = 0.003<br>
 
 ## References
 - Adjacency script adapted from [3D Building Metrics](https://github.com/tudelft3d/3d-building-metrics/). <br>
