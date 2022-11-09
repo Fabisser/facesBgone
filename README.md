@@ -3,6 +3,9 @@
 [![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
 [![Generic badge](https://img.shields.io/badge/updated-2022-<COLOR>.svg)](https://github.com/Fabisser/Synthesis-Project)
 
+![facesBgone](https://user-images.githubusercontent.com/79523968/200880391-47baeb94-fb50-4fa5-a933-80341f22e32f.jpg)
+
+
 ## About the project
 
 This application removes faces between adjacent building from a [CityJSON](http://www.cityjson.org/ "CityJSON") dataset in LoD 2.2 (e.g. 3D BAG).
