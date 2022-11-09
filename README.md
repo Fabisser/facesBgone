@@ -1,4 +1,7 @@
 # facesBgone
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
+[![Generic badge](https://img.shields.io/badge/updated-2022-<COLOR>.svg)](https://github.com/Fabisser/Synthesis-Project)
 
 ## About the project
 
@@ -48,6 +51,8 @@ This application uses C++ and Python, and must be run via a Linux/Unix command l
    - To install on MacOS use `brew install cgal`
 2. Run `chmod u+x setup.sh` then`sh setup.sh`: this installs the Python requirements. Python packages can also be installed with `pip install -r requirements`
 3. Run `chmod u+x run.sh`
+
+For MacOS just run `sh setup.sh`
 
 ## Usage
 1. Prepare CityJSON dataset and place in *project_face_removal/adjacency/data/*
