@@ -35,8 +35,8 @@ Special thanks to Stelios Vitalis, Dr. Ken Arroyo Ohori, Dr. Liangliang Nan and 
 ## Methods
 1. Python script identifies blocks of adjacent buildings and outputs a list of blocks containing building ids as a .txt
 2. The adjacency information is used to run two different methods (developed in C++) for reconstructing the geometry without shared faces:
-   - **Hole filling**: uses symmetric difference between adjacent buildings to extend and close each block as one mesh.
-   - **Nef Polyhedra**: constructs and merges nef polyhedra from adjacent buildings in a block, applying Minkowski sum to remove gaps between buildings
+   - **Hole filling**: uses symmetric difference between adjacent buildings to extend and close each block as one mesh. Note: may not always remove all shared faces
+   - **Nef Polyhedra**: constructs and merges nef polyhedra from adjacent buildings in a block, applying Minkowski sum to remove gaps between buildings. Note 1: this method skips invalid buildings. Please correct geometries to pass [Val3dity](https://github.com/tudelft3d/val3dity) test or input a lower LoD to avoid missing buildings in the final output. Note 2: Please read about the importance of the Minkowski parameter below.
    
 
 https://user-images.githubusercontent.com/79523968/200867898-803496d9-1459-4ba1-8b6e-f1b55308a27a.mov
@@ -87,7 +87,10 @@ Both have to be positive to be considered
 
 ### Nef Polyhedra parameters<br>
 **minkowski**`-p`: value used for minkowski sum. default mink = 0.003<br>
+This parameter has a significant impact on results. It is recommended that users determine this value based on the dataset (e.g. estimated average size of gaps between adjacent buildings) or experiment with parameters to choose an optimal one.
 
 ## References
 - Adjacency script adapted from [3D Building Metrics](https://github.com/tudelft3d/3d-building-metrics/). <br>
 Anna Labetski, Stelios Vitalis, Filip Biljecki, Ken Arroyo Ohori & Jantien Stoter (2022) 3D building metrics for urban morphology, International Journal of Geographical Information Science, DOI: 10.1080/13658816.2022.2103818
+- Ledoux, Hugo (2019). val3dity: validation of 3D GIS primitives according to the international standards. Open Geospatial Data, Software and Standards, 3(1), 2018, pp.1 [PDF] [DOI]
+- Ledoux, Hugo (2013). On the validation of solids represented with the international standards for geographic information. Computer-Aided Civil and Infrastructure Engineering, 28(9):693-706. [PDF] [DOI]
