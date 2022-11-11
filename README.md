@@ -35,7 +35,7 @@ Special thanks to Stelios Vitalis, Dr. Ken Arroyo Ohori, Dr. Liangliang Nan and 
 ## Methods
 1. Python script identifies blocks of adjacent buildings and outputs a list of blocks containing building ids as a .txt
 2. The adjacency information is used to run two different methods (developed in C++) for reconstructing the geometry without shared faces:
-   - **Hole filling**: uses symmetric difference between adjacent buildings to extend and close each block as one mesh. Note: may not always remove all shared faces
+   - **Hole filling**: uses difference between adjacent buildings to extend and close each block as one mesh. Note: may not always remove all shared faces
    - **Nef Polyhedra**: constructs and merges nef polyhedra from adjacent buildings in a block, applying Minkowski sum to remove gaps between buildings. Note 1: this method skips invalid buildings. Please correct geometries to pass [Val3dity](https://github.com/tudelft3d/val3dity) test or input a lower LoD to avoid missing buildings in the final output. Note 2: Please read about the importance of the Minkowski parameter below.
    
 
