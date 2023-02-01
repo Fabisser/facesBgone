@@ -66,7 +66,7 @@ For MacOS just run `sh setup.sh`
 1. Prepare CityJSON dataset and place in *project_face_removal/adjacency/data/*
 2. Open (WSL) command line from *project_face_removal* folder.
 3. Run the bash file, optionally specifying method to use and/or parameters. If no parameters are entered, default values will be used and both methods will run.
-   - Syntax: `sh run.sh [h|i|c|p|h|e|d]`
+   - Syntax: `sh run.sh [m|i|c|p|h|e|d]`
    - e.g.`sh run.sh` or `sh run.sh -mink 0.002 `
 4. When prompted, enter file name of CityJSON dataset.
    - e.g. *buildings.city.json*
